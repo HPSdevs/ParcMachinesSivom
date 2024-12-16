@@ -1,0 +1,32 @@
+:root {
+  --ecritnormale: #000000;
+  --ecritversion: #285eb6;
+  --ecritblanc: #FFFFFF;
+  --fondwarning: #d5041a;
+  --fondinformation: #09550f;
+  --fondecran: #96c3e7a4;
+  --inputecrit: #FFFFFF;
+  --inputback: #0e253f;
+  --buttonback: #375477;
+  --cmdback: #0961e4;
+  --inputshad: rgba(0, 0, 0, 0.3);
+  --encartback: #5c86ada4;
+  --filterinvert: invert(0%);
+  --filternoinvert: invert(100%);
+
+  --padcolorecrit: #000000;
+  --padmenuback: #12352d62;
+  --padmenuretour: #918a8a91;
+  --padmenuborder: #ffffff1f;
+
+  --tableback: #79acc2;
+  /* 62*/
+  --tablepair: #00000010;
+  --tableselected: #427dec;
+
+  --journaldate: #6b6b52;
+  --journaldes: #627953;
+
+  --quadback: #afc6da;
+  --quadborder: #a3b4c3;
+}

@@ -1,0 +1,108 @@
+* {
+	margin: 0px;
+	padding: 0px;
+	box-sizing: border-box;
+	font-size: 18px;
+	font-weight: 500;
+	font-style: normal;
+	font-family: Verdana, Geneva, Tahoma, sans-serif;
+	font-size: medium;
+	word-wrap: break-word;
+}
+
+body {
+	color: #FFFFFF;
+	background-color: #0c1436;
+}
+
+.connexion {
+	height: 90vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	.encart {
+		position: absolute;
+		width: 380px;
+		height: 320px;
+		display: flex;
+		border: 1px solid #FFFFFF1F;
+		background-color: #FFFFFF1F;
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		border-radius: 10px;
+		background-image: url("../images/logo.png");
+		background-size: 80px;
+		background-position: 10px 20px;
+		background-repeat: no-repeat;
+		box-shadow: 0px 0px 5px #000000;
+
+		a {
+			color: var(--ecritnormale);
+			text-decoration: none;
+			font-size: 12px;
+		}
+
+		.titre {
+			width: 100%;
+			padding-right: 20px;
+			text-align: right;
+			margin-bottom: 10px;
+
+			h4 {
+				font-size: 24px;
+				font-weight: 550;
+				color: #FFFFFF;
+				text-shadow: -2px 2px #000000;
+			}
+
+			h3 {
+				font-size: 12px;
+				color: #FFFFFF;
+			}
+
+			h2 {
+				font-size: 12px;
+				color: #285eb6;
+			}
+		}
+
+		meter {
+			width: 300px;
+		}
+
+		.information {
+			margin-top: 20px;
+			height: 182px;
+			display: flex;
+			flex-direction: column;
+			align-content: center;
+			justify-content: flex-start;
+			align-items: center;
+		}
+
+		.info {
+			font-size: 14px;
+			width: 360px;
+			height: 100%;
+			margin-top: 10px;
+			overflow-x: hidden;
+			overflow-y: scroll;
+			scrollbar-width: none;
+		}
+
+		button {
+			height: 30px;
+			padding-left: 5px;
+			padding-right: 5px;
+			border-radius: 5px;
+			color: #000000;
+			background-color: #cce3ff;
+			box-shadow: outset 0px 5px 0 rgba(0, 0, 0, 0.3);
+			cursor: pointer;
+		}
+	}
+
+}

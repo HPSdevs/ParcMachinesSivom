@@ -1,0 +1,98 @@
+header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: var(--encartback);
+  align-content: center;
+  align-items: center;
+
+  gap: 5px;
+  box-shadow: 0 4px 5px rgba(0, 0, 0, 0.3);
+
+  div {
+    display: flex;
+    height: 60px;
+    align-items: center;
+  }
+
+  .name {
+    flex: 1 1 200px;
+    justify-content: flex-start;
+    padding-left: 10px;
+    color: var(--ecritnormale);
+
+    img {
+      width: 25px;
+    }
+  }
+
+  .search {
+    flex: 1 1 400px;
+    justify-content: center;
+
+    input[type="text"] {
+      height: 32px;
+      width: 390px;
+      color: var(--inputecrit);
+      background-color: var(--inputback);
+      padding-left: 10px;
+      border-radius: 20px;
+    }
+
+    img {
+      width: 25px;
+      position: relative;
+      top: 5px;
+      right: 43px;
+      filter: var(--filternoinvert);
+    }
+  }
+
+  .action {
+    flex: 1 1 200px;
+    justify-content: flex-end;
+    padding-right: 10px;
+
+    .menu {
+      button {
+        width: 150px;
+      }
+
+      padding-right: 10px;
+    }
+
+    .theme {
+      button {
+        width: 50px;
+      }
+
+      img {
+        width: 25px;
+        filter: var(--filternoinvert);
+      }
+
+      padding-right: 10px;
+    }
+
+    .disco {
+      img {
+        width: 25px;
+        filter: var(--filternoinvert);
+      }
+
+      button {
+        width: 50px;
+      }
+    }
+  }
+}
+
+.menugeneral {
+  display: grid;
+  grid-template-columns: 200px 200px 200px;
+
+  div {
+    height: 200px;
+
+  }
+}

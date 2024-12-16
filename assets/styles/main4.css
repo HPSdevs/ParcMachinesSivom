@@ -1,0 +1,171 @@
+.fieldnorm {
+	padding: 5px;
+	border-color: var(--encartback);
+
+	&.fondnormal {
+		background-color: var(--encartback);
+	}
+
+	&.margetop {
+		margin-top: 20px;
+	}
+
+	&.red {
+		padding: 5px;
+		border-color: #F06060;
+
+		legend {
+			color: #F06060;
+		}
+	}
+}
+
+/* onglets*/
+.onglets {
+	width: 100%;
+	margin: 0px auto;
+
+	.tabs {
+		position: relative;
+		min-height: 612px;
+		clear: both;
+	}
+
+	.tabs > .tab {
+		float: left;
+	}
+
+	.tab > label {
+		padding: 5px 30px;
+		margin-left: -1px;
+		position: relative;
+		font-size: larger;
+		color: var(--buttonback);
+		left: 1px;
+		top: -5px;
+		height: 30px;
+		border: 1px solid var(--quadborder);
+		background-color: var(--quadback);
+		opacity: .5;
+	}
+
+	.tab [type=radio] {
+		display: none;
+	}
+
+	.content {
+		position: absolute;
+		z-index: 0;
+		top: 35px;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		padding: 20px;
+		overflow: hidden;
+		overflow-y: auto;
+		margin-bottom: -20px;
+		border: 1px solid var(--quadborder);
+		background-color: var(--quadback);
+	}
+
+	.content > * {
+		opacity: 0;
+	}
+
+	[type=radio]:checked ~ label {
+		z-index: 2;
+		opacity: 1;
+		top: -10px;
+		height: 36px;
+		border-bottom: 1px solid var(--quadback);
+	}
+
+	[type=radio]:checked ~ label ~ .content {
+		z-index: 1;
+	}
+
+	[type=radio]:checked ~ label ~ .content > * {
+		opacity: 1;
+	}
+}
+
+.actglo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 100%;
+	height: 80%;
+
+}
+
+.actlegende {
+	font-size: 8px;
+	width: 97%;
+	text-align: right;
+}
+
+.actgfx {
+	display: grid;
+	grid-template-columns: auto auto auto;
+	grid-template-rows: auto;
+	column-gap: 0px;
+	row-gap: 0px;
+	grid-template-areas:
+		"0 b"
+		"a c";
+
+	.actlegj {
+		font-size: 10px;
+		line-height: 15px;
+		grid-area: a;
+	}
+
+	.actlegm {
+		display: flex;
+		font-size: 8px;
+		line-height: 23px;
+		grid-area: b;
+		flex-direction: row;
+		justify-content: flex-start;
+
+		.actlegmn {
+			font-size: 10px;
+			width: 65px;
+		}
+	}
+
+	.actmois {
+		font-size: 16px;
+		height: 110px;
+		display: flex;
+		flex-direction: column;
+		justify-content: flex-start;
+		flex-wrap: wrap;
+		align-content: flex-start;
+		gap: 2px;
+		grid-area: c;
+	}
+
+	.actday {
+		display: flex;
+		width: 13px;
+		height: 13px;
+		border-radius: 2px;
+		align-items: center;
+		justify-content: center;
+
+		&.out {
+			background-color: #80505020;
+		}
+
+		&.rien {
+			background-color: #50505000;
+		}
+
+	}
+
+	.actday:hover {
+		background-color: var(--ecritnormale);
+	}
+
+}

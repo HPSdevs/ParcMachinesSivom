@@ -1,0 +1,249 @@
+header {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: var(--encartback);
+  align-content: center;
+  align-items: center;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.5);
+
+  div {
+    display: flex;
+    height: 60px;
+    align-items: center;
+  }
+
+  .name {
+    flex: 1 1 200px;
+    justify-content: flex-start;
+    padding-left: 10px;
+    color: var(--ecritnormale);
+
+    img {
+      width: 25px;
+    }
+  }
+
+  .search {
+    flex: 1 1 400px;
+    justify-content: center;
+
+    input[type="search"] {
+      height: 32px;
+      width: 550px;
+      color: var(--inputecrit);
+      background-color: var(--inputback);
+      padding-left: 30px;
+      border-radius: 20px;
+    }
+
+    .iconleft {
+      z-index: 3;
+      width: 25px;
+      position: relative;
+      top: 5px;
+      left: 30px;
+      filter: var(--filternoinvert);
+    }
+  }
+
+  .action {
+    flex: 1 1 200px;
+    justify-content: flex-end;
+    padding-right: 10px;
+
+    .menu {
+      button {
+        width: 150px;
+      }
+
+      padding-right: 10px;
+    }
+
+    .theme {
+      button {
+        width: 50px;
+      }
+
+      img {
+        width: 25px;
+        filter: var(--filternoinvert);
+      }
+
+      padding-right: 10px;
+    }
+
+    .disco {
+      img {
+        width: 25px;
+        filter: var(--filternoinvert);
+      }
+
+      button {
+        width: 50px;
+      }
+    }
+  }
+}
+
+.titrepage {
+  margin-top: 25px;
+  margin-bottom: 5px;
+  font-size: 25px;
+  font-weight: 600;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.explainpage {
+  font-size: 12px;
+  font-weight: 400;
+  font-variant: small-caps;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.soustitrepage {
+  margin-top: 25px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 500;
+  text-align: left;
+  margin-left: 50px;
+  text-decoration: underline;
+}
+
+.menugeneral {
+  margin: 30px 40px 0px 40px;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-gap: 12px;
+
+  a {
+    text-decoration: none;
+  }
+
+  div {
+    height: 200px;
+    color: var(--padcolorecrit);
+    background-color: var(--padmenuback);
+    border: outset 1px var(--padmenuborder);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2em;
+    word-break: normal;
+
+    &.retour {
+      background-color: var(--padmenuretour);
+    }
+  }
+
+  div:hover {
+    filter: invert(20%);
+  }
+}
+
+.tempmodal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 60px;
+  left: -450px;
+  width: 450px;
+  height: 80px;
+  z-index: 5;
+  font-size: 20px;
+  border-bottom-right-radius: 20px;
+  color: var(--ecritblanc);
+  animation-name: coucoubye;
+  animation-duration: 2s;
+  background-color: var(--fondecran);
+
+  &.rouge {
+    background-color: var(--fondwarning);
+  }
+
+  &.vert {
+    background-color: var(--fondinformation);
+  }
+
+}
+
+@keyframes coucoubye {
+  30% {
+    transform: translate(450px, 0px);
+  }
+
+  80% {
+    transform: translate(450px, 0px);
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(-450px, 0px);
+  }
+}
+
+.tableparametres {
+  color: var(--padcolorecrit);
+  background-color: var(--tableback);
+  border: outset 0px var(--padmenuborder);
+  border-collapse: collapse;
+  width: 60%;
+  border-radius: 20px;
+
+  tr:nth-child(2n) {
+    background: var(--tablepair);
+  }
+
+  tr td {
+    height: 60px;
+  }
+
+  th,
+  td {
+    padding: 5px;
+    border-collapse: collapse;
+    border: outset 0px var(--padmenuborder);
+    vertical-align: middle;
+
+    input[type=text],
+    input[type=select] {
+      width: 100%;
+    }
+
+    &.centrer {
+      text-align: center;
+    }
+
+    &.small {
+      width: 20%;
+    }
+
+    &.xsmall {
+      width: 120px;
+    }
+  }
+
+}
+
+/* journal */
+.journal {
+  margin-left: auto;
+  margin-right: auto;
+
+  .quand {
+    font-size: 14px;
+    width: 140px;
+    color: var(--journaldate);
+  }
+
+  .designation {
+    font-size: 14px;
+    color: var(--journaldes);
+  }
+}

@@ -1,0 +1,112 @@
+.connexion {
+	height: 90vh;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	.encart {
+		position: absolute;
+		width: 380px;
+		height: 320px;
+		display: flex;
+		border: 1px solid var(--encartback);
+		background-color: var(--encartback);
+		flex-direction: column;
+		align-items: center;
+		justify-content: center;
+		border-radius: 10px;
+		background-image: url("../images/logo.png");
+		background-size: 80px;
+		background-position: 10px 20px;
+		background-repeat: no-repeat;
+		box-shadow: 0px 0px 5px #000000;
+
+		a {
+			color: var(--ecritnormale);
+			text-decoration: none;
+			font-size: 12px;
+		}
+
+		.titre {
+			width: 100%;
+			padding-right: 20px;
+			text-align: right;
+			margin-bottom: 10px;
+
+			h4 {
+				font-size: 24px;
+				font-weight: 550;
+				color: var(--ecritnormale);
+				text-shadow: -2px 2px #000000;
+			}
+
+			h3 {
+				font-size: 12px;
+				color: var(--ecritnormale);
+			}
+
+			h2 {
+				font-size: 12px;
+				color: var(--ecritversion);
+			}
+		}
+
+		.information {
+			color: var(--fondwarning);
+			margin-top: 20px;
+			height: 20px;
+		}
+	}
+
+	.icon {
+		filter: invert(100%);
+		position: absolute;
+		width: 25px;
+		top: 220px;
+		right: 33px;
+	}
+
+	.tooltip:hover .texttip {
+		visibility: visible;
+	}
+
+	label {
+		color: var(--ecritnormale);
+		display: block;
+		width: 312px;
+		font-size: small;
+		margin-top: 10px;
+	}
+
+	.login {
+		width: 312px;
+	}
+
+	.pass {
+		width: 280px;
+		margin-right: 32px;
+	}
+
+	button {
+		margin-top: 20px;
+		width: 150px;
+	}
+
+	.tooltip .texttip {
+		visibility: hidden;
+		z-index: 5;
+		position: absolute;
+		top: 110px;
+		left: 80px;
+		width: 240px;
+		height: 100px;
+		padding: 8px;
+		border-radius: 10px;
+		text-align: center;
+		color: var(--ecritblanc);
+		background-color: var(--fondinformation);
+		box-shadow: 0 4px 4px var(--inputshad);
+	}
+
+}

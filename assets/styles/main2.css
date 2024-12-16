@@ -1,0 +1,308 @@
+.container {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-content: flex-start;
+  gap: 20px;
+
+  .limity {
+    max-height: 650px;
+    overflow-y: auto;
+  }
+
+  &.parc {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    justify-content: space-evenly;
+  }
+
+  .cotegauche {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 70%;
+
+    &.moitie {
+      width: 48%;
+    }
+
+    &.quart {
+      min-width: 330px;
+      width: 24%;
+    }
+
+  }
+
+  .cotedroit {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 27%;
+    position: relative;
+
+    &.moitie {
+      padding-left: 40px;
+      width: 48%;
+    }
+
+    &.quart {
+      min-width: 330px;
+      width: 24%;
+    }
+
+  }
+
+  .colonne {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-content: flex-start;
+    gap: 20px;
+  }
+
+  .stickyman {
+    position: sticky;
+    top: 0px;
+  }
+
+  fieldset {
+    margin: 10px;
+    padding: 10px;
+    width: 100%;
+    border-radius: 10px;
+
+    legend::before {
+      content: "⁌ ";
+    }
+
+    legend::after {
+      content: " ⁍";
+    }
+
+    &.statut {
+      height: 220px;
+      overflow-x: hidden;
+      overflow-y: auto;
+    }
+  }
+
+  /* label */
+  .generatemdp {
+    float: right;
+    width: 120px;
+    height: 32px;
+  }
+
+  .mouvepage {
+    margin-top: 20px;
+    width: 501px;
+
+    input[type='text'] {
+      width: 80px;
+      height: 30px;
+    }
+
+    input[type='button'] {
+      width: 150px;
+      height: 30px;
+    }
+
+  }
+
+  .listeelements {
+    background-color: var(--tableback);
+    width: 100%;
+    padding: 5px;
+
+    thead tr td {
+      color: set(--tableback);
+      background-color: #00002020;
+      height: 50px;
+    }
+
+    tbody tr:hover {
+      background-color: #FF000050;
+    }
+
+    .selected {
+      background-color: #597004d3;
+    }
+
+    tr:nth-child(even) td {
+      background-color: var(--tablepair);
+    }
+
+    td {
+      padding-left: 5px;
+      padding-right: 5px;
+
+      &.centrer {
+        text-align: center;
+      }
+    }
+  }
+
+  .boutons {
+    margin-top: 60px;
+    display: grid;
+    grid-template-columns: auto auto auto;
+    grid-template-rows: auto;
+    column-gap: 10px;
+    row-gap: 5px;
+    grid-template-areas:
+      "a b c"
+      "d d d";
+
+    .bouta {
+      grid-area: a;
+    }
+
+    .boutb {
+      grid-area: b;
+    }
+
+    .boutc {
+      grid-area: c;
+    }
+
+    .boutd {
+      grid-area: d;
+    }
+  }
+
+  input[type='reset'],
+  button {
+    height: 50px;
+    width: 100%;
+    padding-left: 5px;
+    padding-right: 5px;
+    border-radius: 5px;
+    color: var(--inputecrit);
+    background-color: var(--buttonback);
+    box-shadow: outset 0px 5px 0 var(--inputshad);
+    cursor: pointer;
+
+  }
+
+  input[type='text'],
+  select {
+    width: 100%
+  }
+
+}
+
+.journallist {
+  width: 100%;
+  padding: 0px;
+  border-collapse: collapse;
+
+  tr {
+    height: 26px;
+  }
+
+  tr:nth-child(even) {
+    background-color: var(--tableback);
+  }
+
+  tr.selected {
+    color: var(--tableselected);
+  }
+
+  &.hovermode {
+    tr:hover {
+      background-color: #FF000050;
+    }
+  }
+
+  tr td a {
+    color: var(--ecritnormale);
+    font-family: monospace;
+    font-size: 16px;
+    text-decoration: none;
+  }
+}
+
+.limitheight {
+  max-height: 360px;
+  overflow-y: auto;
+}
+
+.cloture {
+  z-index: 3;
+  position: relative;
+  left: -10px;
+  top: -10px;
+}
+
+.topback {
+  position: absolute;
+  width: 100%;
+  left: 0px;
+  top: 0px;
+}
+
+.attention {
+  width: 100%;
+  background-color: var(--fondwarning);
+  padding: 5px;
+  font-size: larger;
+}
+
+.fac {
+  position: absolute;
+  left: 15%;
+  top: 395px;
+  z-index: 3;
+  background-color: var(--tableback);
+
+  fieldset {
+    padding: 5px;
+  }
+
+}
+
+.lgn {
+  display: flex;
+  flex-direction: row;
+
+  span {
+    margin-right: 2px;
+  }
+
+  .slc {
+    height: 30px;
+    width: 320px;
+  }
+
+  .obj {
+    width: 380px;
+    height: 30px;
+  }
+
+  .qte {
+    width: 140px;
+    height: 30px;
+    text-align: right;
+  }
+
+  .qud {
+    width: 200px;
+    height: 30px;
+  }
+
+  .prx {
+    width: 130px;
+    height: 30px;
+    padding-left: 3px;
+    text-align: right;
+  }
+
+  .btn {
+    width: 30px;
+    height: 30px;
+  }
+}
