@@ -2,7 +2,7 @@
 ### **Parc Machines SIVOM**
 Gestionnaire de parc de machines et de véhicules
 
-![Menu principal](https://github.com/user-attachments/assets/4fc3fc9b-844f-414d-b39c-89e4dfe1c033)
+![menu](https://github.com/user-attachments/assets/415e611a-68ef-47c1-a6c0-65d2c11c3ddc)
 ### **! CETTE APPLICATION EST PREVUE UNIQUEMENT POUR UNE UTILISATION EN INTRANET !**
 
 Une application GRATUITE de gestion de machines ( machines outils et véhicules ) pour une société comme un SIVOM ( Syndicat Intercommunal à VOcation Multiple ). Prévu pour écran de taille 1080 * 1920. Vous pouvez suivre votre parc de machines dans les différentes prestations et demandes d'interventions, et à loisirs modifier ou ajouter en marque, en modèle, en intervention ou en prestation pour correspondre aux mieux au votre.
@@ -15,15 +15,15 @@ Une application GRATUITE de gestion de machines ( machines outils et véhicules 
   
  3 exemples de machines sont inclus par défaut dans le parc avec comme observation "TEST".
 
-![Le parc](https://github.com/user-attachments/assets/c5f6f013-c066-4f0c-a64a-066422d763c7)
+![parc](https://github.com/user-attachments/assets/b2de4276-cc61-495b-b3a4-67e82b33860e)
  
-![Gestion des modeles](https://github.com/user-attachments/assets/2c7ac844-4edc-4014-9e39-587fa4a6eb1b)
+![marque](https://github.com/user-attachments/assets/aa6762fd-7b68-4ba8-96ea-3922c1c48298)
  
-![Menu Admin](https://github.com/user-attachments/assets/d5fa4e31-ecbb-4b22-b503-7cbaa57d1fea)
+![parametres](https://github.com/user-attachments/assets/e9c1937e-9817-4276-99d4-1c9abf4700ef)
 
-![Vue sur un véhicule](https://github.com/user-attachments/assets/599d4c2f-1d90-4722-afa0-7c37b0c58b41)
+![vehicule](https://github.com/user-attachments/assets/4eb6f648-82cc-463b-9d34-00e7bdc49e1a)
 
-![Détail véhicule](https://github.com/user-attachments/assets/5060ddfd-494e-4b67-9615-6c3bdb3c3ff6)
+![intervention](https://github.com/user-attachments/assets/d515e650-85c6-467b-95e4-8008755598e3)
 
 ### **INSTALLATION :**
 un serveur (style XAMPP) avec MySQL et une configuration correctement paramétrée. cliquez sur
@@ -54,7 +54,13 @@ Dès le premier lancement de l'application, le site sera en maintenance (seul l'
 ###  **SI VOUS AIMEZ**
 Vous pouvez m'aider à programmer encore plus en me soutenant car c'est mon premier projet (projet de stage non rémunéré) pour mon diplôme de DWWM du 10/2024 ,  ceci sera uniquement utilisé pour du matériel et des cours en informatique. Ci-dessous un QR code de mon compte PayPal sans fioriture et selon vos moyens.
 Merci & bonne journée.
-
-![qrcodesmall](https://github.com/user-attachments/assets/897ab165-edf0-403b-8d6c-d2e0b0adc446)
+![qrcodesmall](https://github.com/user-attachments/assets/b0ae721d-e988-445b-8a09-c0dda6657453)
 
  
+
+
+
+
+
+
+
