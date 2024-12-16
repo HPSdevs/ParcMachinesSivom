@@ -25,6 +25,8 @@ Une application GRATUITE de gestion de machines ( machines outils et véhicules 
 
 ![intervention](https://github.com/user-attachments/assets/d515e650-85c6-467b-95e4-8008755598e3)
 
+![documents](https://github.com/user-attachments/assets/4951f70f-74b5-4832-ae0d-39a119ee8faf)
+
 ### **INSTALLATION :**
 un serveur (style XAMPP) avec MySQL et une configuration correctement paramétrée. cliquez sur
 http://localhost/parcsivom/configx-hps/install.php
@@ -58,6 +60,7 @@ Merci & bonne journée.
 ![qrcodesmall](https://github.com/user-attachments/assets/b0ae721d-e988-445b-8a09-c0dda6657453)
 
  
+
 
 
 
