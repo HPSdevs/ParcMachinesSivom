@@ -54,6 +54,7 @@ Dès le premier lancement de l'application, le site sera en maintenance (seul l'
 ###  **SI VOUS AIMEZ**
 Vous pouvez m'aider à programmer encore plus en me soutenant car c'est mon premier projet (projet de stage non rémunéré) pour mon diplôme de DWWM du 10/2024 ,  ceci sera uniquement utilisé pour du matériel et des cours en informatique. Ci-dessous un QR code de mon compte PayPal sans fioriture et selon vos moyens.
 Merci & bonne journée.
+
 ![qrcodesmall](https://github.com/user-attachments/assets/b0ae721d-e988-445b-8a09-c0dda6657453)
 
  
