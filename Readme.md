@@ -28,9 +28,7 @@ Une application GRATUITE de gestion de machines ( machines outils et véhicules 
 ![documents](https://github.com/user-attachments/assets/4951f70f-74b5-4832-ae0d-39a119ee8faf)
 
 ### **INSTALLATION :**
-un serveur (style XAMPP) avec MySQL et une configuration correctement paramétrée. cliquez sur
-http://localhost/[votrerepertoire]/configx-hps/install.php
-pour l'installation automatique de la base de données. Néanmoins des fichiers dans le répertoire CONFIGX-HPS permettent de configurer la base de données et les courriels.  il est conseillé de supprimer le fichier "install.php" et le répertoire "_base2donnees" après installation.
+un serveur (style XAMPP) avec MySQL et une configuration correctement paramétrée. cliquez sur install.php dans le répertoire /configx-hps/ pour l'installation automatique de la base de données. Néanmoins des fichiers dans le répertoire CONFIGX-HPS permettent de configurer la base de données et les courriels.  il est conseillé de supprimer le fichier "install.php" et le répertoire "_base2donnees" après installation.
 
 ### **CONNEXION :** 
 Les six accès par défaut déjà créé pour vous tester ( login / pass   -  TYPE )
