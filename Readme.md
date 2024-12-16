@@ -29,7 +29,7 @@ Une application GRATUITE de gestion de machines ( machines outils et véhicules 
 
 ### **INSTALLATION :**
 un serveur (style XAMPP) avec MySQL et une configuration correctement paramétrée. cliquez sur
-http://localhost/parcsivom/configx-hps/install.php
+http://localhost/[votrerepertoire]/configx-hps/install.php
 pour l'installation automatique de la base de données. Néanmoins des fichiers dans le répertoire CONFIGX-HPS permettent de configurer la base de données et les courriels.  il est conseillé de supprimer le fichier "install.php" et le répertoire "_base2donnees" après installation.
 
 ### **CONNEXION :** 
