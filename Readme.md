@@ -32,12 +32,12 @@ pour l'installation automatique de la base de données. Néanmoins des fichiers 
 
 ### **CONNEXION :** 
 Les six accès par défaut déjà créé pour vous tester ( login / pass   -  TYPE )
- admin		142536     -  ADMIN
- chef		142536     -  CHEF
- meca2		142536     -  MECA
- meca1		142536     -  MECA
- user02		142536     -  USER
- user01		142536     -  USER
+ admin		142536  (ADMIN)
+ chef		142536  (CHEF)
+ meca2		142536  (MECA)
+ meca1		142536  (MECA)
+ user02		142536  (USER)
+ user01		142536  (USER)
 
 Chaque 'TYPE' a des accès spécifiques, le 'USER' n'a que le parc et ne peut faire que des demandes d'interventions (avec possibilités de faire ses propres remarques). Les 'MECA' ont accès aux machines et aux interventions/prestations, les 'CHEF' ont accès en plus des 'MECA' à la configuration du parc, et les 'ADMIN' peuvent tout configurer. 
 
