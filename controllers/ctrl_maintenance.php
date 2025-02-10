@@ -37,8 +37,8 @@ function GetSiteStatut()
   $sql = "SELECT sitestatut FROM preferences WHERE id = 1";
   $stmt = $pdo->prepare($sql);
   $stmt->execute();
-  $data = $stmt->fetch();
-  return $data['sitestatut'];
+  $data = $stmt->fetch() ;
+  return $data['sitestatut'] ?? 0;
 }
 function ToggleSiteStatut($value)
 {

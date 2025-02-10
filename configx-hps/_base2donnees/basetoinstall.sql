@@ -723,7 +723,7 @@ COMMIT;
 -- -----------------------------------------------------
 START TRANSACTION;
 USE `ParcSivom`;
-INSERT INTO `ParcSivom`.`preferences` (`id`, `lastmaintenance`, `sitestatut`) VALUES (1, NULL, NULL);
+INSERT INTO `ParcSivom`.`preferences` (`id`, `lastmaintenance`, `sitestatut`) VALUES (1, NULL, 0);
 
 COMMIT;
 
