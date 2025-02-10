@@ -65,4 +65,3 @@ Vous pouvez m'aider à programmer encore plus en me soutenant ou en commentant e
 
 [![dons](https://github.com/user-attachments/assets/6ad7e88e-37a8-4b16-b65a-187935cff127)](https://buymeacoffee.com/hpsdevs)
 
-> > > > > > > 71916b2670859af8c4d9a4ee0c601d6a2cba5c25
