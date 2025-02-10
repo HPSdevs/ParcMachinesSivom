@@ -2,7 +2,7 @@
 
 function CallDesignationModeleMachines($idmodele)
 {
-  require("components\mysql.php");
+  require("components/mysql.php");
   $sql = "SELECT designation FROM modelemachine WHERE id_modelemachine = ?";
   $stmt = $pdo->prepare($sql);
   $stmt->execute([$idmodele]);
@@ -12,7 +12,7 @@ function CallDesignationModeleMachines($idmodele)
 }
 function CallGetModeleMachines($marque)
 {
-  require("components\mysql.php");
+  require("components/mysql.php");
   $sql = "SELECT * FROM modelemachine WHERE statut = 1 AND idx_marque = 0 or idx_marque = ? ORDER BY designation ASC";
   $stmt = $pdo->prepare($sql);
   $stmt->execute([$marque]);
@@ -21,7 +21,7 @@ function CallGetModeleMachines($marque)
 }
 function CallGetAllModeleMachines()
 {
-  require("components\mysql.php");
+  require("components/mysql.php");
   $sql = "SELECT * FROM modelemachine ORDER BY designation ASC";
   $stmt = $pdo->prepare($sql);
   $stmt->execute();
@@ -30,7 +30,7 @@ function CallGetAllModeleMachines()
 }
 function CallUpdateModeleMachine($designation, $marque, $statut, $id)
 {
-  require("components\mysql.php");
+  require("components/mysql.php");
   $sql = "UPDATE modelemachine SET idx_marque = ?, statut= ?, designation = ? WHERE idx_marque > 0 AND id_modelemachine = ?";
   $stmt = $pdo->prepare($sql);
   $stmt->execute([$marque, $statut, $designation, $id]);
@@ -38,7 +38,7 @@ function CallUpdateModeleMachine($designation, $marque, $statut, $id)
 }
 function CallDeleteModeleMachine($id)
 {
-  require("components\mysql.php");
+  require("components/mysql.php");
   $sql = "SELECT COUNT(idx_modele) as nb FROM machine WHERE idx_marque > 0 AND idx_modele = ?";
   $stmt = $pdo->prepare($sql);
   $stmt->execute([$id]);
@@ -54,7 +54,7 @@ function CallDeleteModeleMachine($id)
 
 function CallInsertModeleMachine($designation, $marque, $statut)
 {
-  require("components\mysql.php");
+  require("components/mysql.php");
   $sql = "INSERT INTO modelemachine (idx_marque,statut,designation) VALUES (?,?,?)";
   $stmt = $pdo->prepare($sql);
   $stmt->execute([$marque, $statut, $designation]);

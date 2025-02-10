@@ -2,7 +2,7 @@
 
 function CallGetAction()
 {
-  require("components\mysql.php");
+  require("components/mysql.php");
   $sql = "SELECT * FROM action WHERE statut = 1 ORDER BY designation ASC";
   $stmt = $pdo->prepare($sql);
   $stmt->execute();
@@ -11,7 +11,7 @@ function CallGetAction()
 }
 function CallGetAllAction()
 {
-  require("components\mysql.php");
+  require("components/mysql.php");
   $sql = "SELECT * FROM action ORDER BY designation ASC";
   $stmt = $pdo->prepare($sql);
   $stmt->execute();
@@ -20,7 +20,7 @@ function CallGetAllAction()
 }
 function CallUpdateAction($designation, $statut, $id)
 {
-  require("components\mysql.php");
+  require("components/mysql.php");
   $sql = "UPDATE action SET statut= ?, designation = ? WHERE id_action = ?";
   $stmt = $pdo->prepare($sql);
   $stmt->execute([$statut, $designation, $id]);
@@ -28,7 +28,7 @@ function CallUpdateAction($designation, $statut, $id)
 }
 function CallDeleteAction($id)
 {
-  require("components\mysql.php");
+  require("components/mysql.php");
   $sql = "SELECT COUNT(idx_action) as nb FROM prestation WHERE idx_action = ?";
   $stmt = $pdo->prepare($sql);
   $stmt->execute([$id]);
@@ -43,7 +43,7 @@ function CallDeleteAction($id)
 }
 function CallInsertAction($designation, $statut)
 {
-  require("components\mysql.php");
+  require("components/mysql.php");
   $sql = "INSERT INTO action (statut,designation) VALUES (?,?)";
   $stmt = $pdo->prepare($sql);
   $stmt->execute([$statut, $designation]);

@@ -2,7 +2,7 @@
 
 function CallDesignationTypeMachines($idtype)
 {
-  require("components\mysql.php");
+  require("components/mysql.php");
   $sql = "SELECT designation FROM typemachine WHERE id_typemachine = ?";
   $stmt = $pdo->prepare($sql);
   $stmt->execute([$idtype]);
@@ -12,7 +12,7 @@ function CallDesignationTypeMachines($idtype)
 }
 function CallGetTypeMachines($genre)
 {
-  require("components\mysql.php");
+  require("components/mysql.php");
   $sql = "SELECT * FROM typemachine WHERE statut = 1 AND genre & ? ORDER BY designation ASC";
   $stmt = $pdo->prepare($sql);
   $stmt->execute([$genre]);
@@ -21,7 +21,7 @@ function CallGetTypeMachines($genre)
 }
 function CallGetAllTypeMachines()
 {
-  require("components\mysql.php");
+  require("components/mysql.php");
   $sql = "SELECT * FROM typemachine ORDER BY designation ASC";
   $stmt = $pdo->prepare($sql);
   $stmt->execute();
@@ -30,7 +30,7 @@ function CallGetAllTypeMachines()
 }
 function CallUpdateTypeMachine($designation, $genre, $statut, $id)
 {
-  require("components\mysql.php");
+  require("components/mysql.php");
   $sql = "UPDATE typemachine SET genre = ?, statut= ?, designation = ? WHERE id_typemachine = ?";
   $stmt = $pdo->prepare($sql);
   $stmt->execute([$genre, $statut, $designation, $id]);
@@ -38,7 +38,7 @@ function CallUpdateTypeMachine($designation, $genre, $statut, $id)
 }
 function CallDeleteTypeMachine($id)
 {
-  require("components\mysql.php");
+  require("components/mysql.php");
   $sql = "SELECT COUNT(idx_type) as nb FROM machine WHERE idx_type = ?";
   $stmt = $pdo->prepare($sql);
   $stmt->execute([$id]);
@@ -54,7 +54,7 @@ function CallDeleteTypeMachine($id)
 
 function CallInsertTypeMachine($designation, $genre, $statut)
 {
-  require("components\mysql.php");
+  require("components/mysql.php");
   $sql = "INSERT INTO typemachine (genre,statut,designation) VALUES (?,?,?)";
   $stmt = $pdo->prepare($sql);
   $stmt->execute([$genre, $statut, $designation]);

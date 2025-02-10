@@ -2,7 +2,7 @@
 
 function CallGetTypeInter($genre, $role)
 {
-  require('components\mysql.php');
+  require('components/mysql.php');
   $sql  = 'SELECT * FROM typeintervention WHERE statut = 1 AND genre & ? AND role & ?';
   $stmt = $pdo->prepare($sql);
   $stmt->execute([$genre, $role]);
@@ -12,7 +12,7 @@ function CallGetTypeInter($genre, $role)
 
 function CallGetAllTypeInter()
 {
-  require('components\mysql.php');
+  require('components/mysql.php');
   $sql  = 'SELECT * FROM typeintervention ORDER BY role DESC, designation  ASC';
   $stmt = $pdo->prepare($sql);
   $stmt->execute();
@@ -22,7 +22,7 @@ function CallGetAllTypeInter()
 
 function CallGetDesignInter($idtype)
 {
-  require('components\mysql.php');
+  require('components/mysql.php');
   $sql  = 'SELECT designation FROM typeintervention WHERE id_typeintervention = ?';
   $stmt = $pdo->prepare($sql);
   $stmt->execute([$idtype]);
@@ -33,7 +33,7 @@ function CallGetDesignInter($idtype)
 
 function CallUpdateTypeInter($designation, $role, $genre, $statut, $id)
 {
-  require('components\mysql.php');
+  require('components/mysql.php');
   $sql  = 'UPDATE typeintervention SET role = ?, genre = ?, statut= ?, designation = ? WHERE id_typeintervention = ?';
   $stmt = $pdo->prepare($sql);
   $stmt->execute([$role, $genre, $statut, $designation, $id]);
@@ -42,7 +42,7 @@ function CallUpdateTypeInter($designation, $role, $genre, $statut, $id)
 
 function CallDeleteTypeInter($id)
 {
-  require('components\mysql.php');
+  require('components/mysql.php');
   $sql  = 'SELECT COUNT(idx_typeintervention) as nb FROM intervention WHERE idx_typeintervention = ?';
   $stmt = $pdo->prepare($sql);
   $stmt->execute([$id]);
@@ -58,7 +58,7 @@ function CallDeleteTypeInter($id)
 
 function CallInsertTypeInter($designation, $role, $genre, $statut)
 {
-  require('components\mysql.php');
+  require('components/mysql.php');
   $sql  = 'INSERT INTO typeintervention (role,genre,statut,designation) VALUES (?,?,?,?)';
   $stmt = $pdo->prepare($sql);
   $stmt->execute([$role, $genre, $statut, $designation]);

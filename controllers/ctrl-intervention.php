@@ -9,7 +9,7 @@
 */
 function CallRefreshTrashIntervention()
 {
-	require("components\mysql.php");
+	require("components/mysql.php");
 	// effacement des vieilles demandes d'intervention non validée et supérieur à 48 heures.
 	$sql = "DELETE FROM intervention WHERE statut_intervention = 0 AND date_creation < DATE_SUB(NOW(), INTERVAL 48 HOUR)";
 	$stmt = $pdo->prepare($sql);
@@ -18,7 +18,7 @@ function CallRefreshTrashIntervention()
 }
 function CallHowmanyIntervention($statut)  //  Liste des interventions
 {
-	require("components\mysql.php");
+	require("components/mysql.php");
 	$sta = ($statut == 1) ? "WHERE statut_intervention < 8 " : "";  // en cours
 	$sta = ($statut == 0) ? "WHERE statut_intervention > 7 " : $sta;  // cloture
 	$sql = "SELECT COUNT(id_intervention) as nb	FROM intervention $sta";
@@ -29,7 +29,7 @@ function CallHowmanyIntervention($statut)  //  Liste des interventions
 }
 function CallGetFullIntervention($page, $statut)  //  Liste des interventions
 {
-	require("components\mysql.php");
+	require("components/mysql.php");
 
 	$sta = ($statut == 1) ? "WHERE statut_intervention < 8 " : "";  // en cours
 	$sta = ($statut == 0) ? "WHERE statut_intervention > 7 " : $sta;  // cloture
@@ -49,7 +49,7 @@ function CallGetFullIntervention($page, $statut)  //  Liste des interventions
 }
 function CallGetInterventionByID($id)
 {
-	require("components\mysql.php");
+	require("components/mysql.php");
 	$sql = "SELECT * FROM intervention WHERE id_intervention = ?";
 	$stmt = $pdo->prepare($sql);
 	$stmt->execute([$id]);
@@ -58,7 +58,7 @@ function CallGetInterventionByID($id)
 }
 function CallWhoIsDemandeur($id)
 {
-	require("components\mysql.php");
+	require("components/mysql.php");
 	$sql = "SELECT idx_demandeur FROM intervention WHERE id_intervention = ?";
 	$stmt = $pdo->prepare($sql);
 	$stmt->execute([$id]);
@@ -67,7 +67,7 @@ function CallWhoIsDemandeur($id)
 }
 function CallGetIntervention($statut)
 {
-	require("components\mysql.php");
+	require("components/mysql.php");
 	$a = $statut ? "& 7" : "& 24";
 	$sql = "SELECT * FROM intervention WHERE statut_intervention $a ORDER BY date_creation ASC";
 	$stmt = $pdo->prepare($sql);
@@ -77,7 +77,7 @@ function CallGetIntervention($statut)
 }
 function CallGetAllInterventionFull($statut)
 {
-	require("components\mysql.php");
+	require("components/mysql.php");
 	$sta = ($statut) ?  "& 7" : "& 24";
 	$tri = ($statut) ?  "ASC" : "DESC";
 	$sql = "SELECT id_intervention,idx_machine,idx_genre,total_prestation,(total_cout/100) as total_cout,statut_intervention,statut_depose,statut_urgent,statut_immobilise,statut_inutilisable,
@@ -97,7 +97,7 @@ function CallGetAllInterventionFull($statut)
 }
 function CallGetAllDemandeurIntervention($statut, $iddemandeur)
 {
-	require("components\mysql.php");
+	require("components/mysql.php");
 	$sta = ($statut) ?  "& 7" : "& 24";
 	$tri = ($statut) ?  "ASC" : "DESC";
 	$sql = "SELECT id_intervention,idx_machine,idx_genre,total_prestation,(total_cout/100) as total_cout,statut_intervention,statut_depose,statut_urgent,statut_immobilise,statut_inutilisable,
@@ -117,7 +117,7 @@ function CallGetAllDemandeurIntervention($statut, $iddemandeur)
 }
 function CallGetMachineInterventionFull($idmachine, $statut)
 {
-	require("components\mysql.php");
+	require("components/mysql.php");
 	$sta = ($statut) ? "& 7" : "& 24";
 	$tri = ($statut) ? "ASC" : "DESC";
 	$sql = "SELECT id_intervention,total_prestation,statut_intervention,statut_depose,statut_urgent,statut_immobilise,statut_inutilisable,intervention.date_creation AS crea, intervention.date_cloture AS clos,kilometrage,idx_machine, idx_genre, machine.designation AS machine, typeintervention.designation AS motif,  p1.pseudo AS demandeur, p2.pseudo AS mecanicien, p1.id_user as idx_demandeur
@@ -135,7 +135,7 @@ function CallGetMachineInterventionFull($idmachine, $statut)
 }
 function CallGetMachineIntervention($idmachine, $statut)
 {  // savoir toutes les inter false= arretée ou true= running
-	require("components\mysql.php");
+	require("components/mysql.php");
 	$a = ($statut) ? "& 7" : "& 24";
 	$sql = "SELECT * FROM intervention WHERE statut_intervention $a AND idx_machine = ? ORDER BY date_creation ASC";
 	$stmt = $pdo->prepare($sql);
@@ -145,7 +145,7 @@ function CallGetMachineIntervention($idmachine, $statut)
 }
 function CallGetDemandIntervention($iddemandeur, $idmachine, $statut)
 {
-	require("components\mysql.php");
+	require("components/mysql.php");
 	$sql = "SELECT id_intervention FROM intervention WHERE idx_machine= ? AND statut_intervention = ? AND idx_demandeur = ?";
 	$stmt = $pdo->prepare($sql);
 	$stmt->execute([$idmachine, $statut, $iddemandeur]);
@@ -155,7 +155,7 @@ function CallGetDemandIntervention($iddemandeur, $idmachine, $statut)
 }
 function CallGetMecaIntervention($idmecano, $statut)
 {
-	require("components\mysql.php");
+	require("components/mysql.php");
 	$sql = "SELECT * FROM intervention WHERE statut_intervention = ?  AND idx_mecanicien = ? ORDER BY date_creation ASC";
 	$stmt = $pdo->prepare($sql);
 	$stmt->execute([$statut, $idmecano]);
@@ -164,7 +164,7 @@ function CallGetMecaIntervention($idmecano, $statut)
 }
 function CallInsertInterMachine($iddemandeur, $idmachine)
 {
-	require("components\mysql.php");
+	require("components/mysql.php");
 	$sql = "INSERT INTO intervention (idx_machine, idx_demandeur,statut_intervention,date_creation) VALUES (?,?,0,now())";
 	$stmt = $pdo->prepare($sql);
 	$stmt->execute([$idmachine, $iddemandeur]);
@@ -173,7 +173,7 @@ function CallInsertInterMachine($iddemandeur, $idmachine)
 }
 function CallUpdateSaveIntervention($depose, $adress, $type, $com, $idinter)
 {
-	require("components\mysql.php");
+	require("components/mysql.php");
 	$sql = "UPDATE intervention SET statut_depose = ?, depose_lieu= ?, idx_typeintervention = ?, comment_demandeur = ? , date_creation = NOW() WHERE id_intervention = ?";
 	$stmt = $pdo->prepare($sql);
 	$stmt->execute([$depose, $adress, $type, $com, $idinter]);
@@ -181,7 +181,7 @@ function CallUpdateSaveIntervention($depose, $adress, $type, $com, $idinter)
 }
 function CallUpdateSendIntervention($depose, $adress, $type, $com, $idinter)
 {
-	require("components\mysql.php");
+	require("components/mysql.php");
 	$sql = "UPDATE intervention SET statut_depose = ?, depose_lieu= ?, idx_typeintervention = ?, comment_demandeur = ? , statut_intervention = 1, date_creation = NOW() WHERE id_intervention = ?";
 	$stmt = $pdo->prepare($sql);
 	$stmt->execute([$depose, $adress, $type, $com, $idinter]);
@@ -189,7 +189,7 @@ function CallUpdateSendIntervention($depose, $adress, $type, $com, $idinter)
 }
 function CallDeleteIntervention($idinter)
 {
-	require("components\mysql.php");
+	require("components/mysql.php");
 	$sql = "DELETE FROM intervention WHERE id_intervention = ?";
 	$stmt = $pdo->prepare($sql);
 	$stmt->execute([$idinter]);
@@ -197,7 +197,7 @@ function CallDeleteIntervention($idinter)
 }
 function CallUpdateTotalIntervention($idinter)
 {
-	require("components\mysql.php");
+	require("components/mysql.php");
 	$totalprix = 0;
 	$totaltemps = null;
 	$sql = 'SELECT duree,total FROM prestation WHERE idx_intervention = ?';
@@ -215,7 +215,7 @@ function CallUpdateTotalIntervention($idinter)
 }
 function CallUpdateAutoStatutintervention($idinter)
 {
-	require("components\mysql.php");
+	require("components/mysql.php");
 	$sql = "SELECT statut_intervention, total_prestation FROM intervention WHERE id_intervention = ?";
 	$stmt = $pdo->prepare($sql);
 	$stmt->execute([$idinter]);
@@ -228,7 +228,7 @@ function CallUpdateAutoStatutintervention($idinter)
 }
 function CallUpdateGestionIntervention($kilometre, $urgence, $inutilisable, $immobil, $rapatriement, $statut, $comment, $idinter)
 {
-	require("components\mysql.php");
+	require("components/mysql.php");
 	$opt = ($statut & 24) ? ", date_cloture = NOW()" : "";
 	$sql = "UPDATE intervention SET kilometrage = ?, statut_urgent = ?, statut_inutilisable = ?, statut_immobilise = ?, statut_depose = ?, statut_intervention = ?, comment_mecanicien = ? $opt WHERE id_intervention = ?";
 	$stmt = $pdo->prepare($sql);

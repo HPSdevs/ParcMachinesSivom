@@ -1,7 +1,7 @@
 <?php
 function CallGetAllMachine()
 {
-  require("components\mysql.php");
+  require("components/mysql.php");
   $sql = "SELECT * FROM machine ORDER BY designation ASC";
   $stmt = $pdo->prepare($sql);
   $stmt->execute();
@@ -10,7 +10,7 @@ function CallGetAllMachine()
 }
 function CallGetCombienMachine($genre)
 {  // used pour faire les différentes pages
-  require("components\mysql.php");
+  require("components/mysql.php");
   $sql = "SELECT COUNT(id_machine) as total FROM machine WHERE idx_genre & ?";
   $stmt = $pdo->prepare($sql);
   $stmt->execute([$genre]);
@@ -19,7 +19,7 @@ function CallGetCombienMachine($genre)
 }
 function CallGetAllMachineFull($page, $genre)
 {  // page>=1 
-  require("components\mysql.php");
+  require("components/mysql.php");
   $sql = "SELECT id_machine, typemachine.designation AS type, marquemachine.designation AS marque, 
           modelemachine.designation AS modele, energiemachine.designation AS energie,
           idx_genre,idx_modele,imat,puissance,date_premservice,date_procvsttech,actif,alerte,observation
@@ -37,7 +37,7 @@ function CallGetAllMachineFull($page, $genre)
 }
 function CallCheckIfMachineExist($id)
 {
-  require("components\mysql.php");
+  require("components/mysql.php");
   $sql = "SELECT id_machine FROM machine WHERE id_machine = ? ";
   $stmt = $pdo->prepare($sql);
   $stmt->execute([$id]);
@@ -46,7 +46,7 @@ function CallCheckIfMachineExist($id)
 }
 function CallGetMachine($id)
 {
-  require("components\mysql.php");
+  require("components/mysql.php");
   $sql = "SELECT * FROM machine WHERE id_machine = ? ";
   $stmt = $pdo->prepare($sql);
   $stmt->execute([$id]);
@@ -55,7 +55,7 @@ function CallGetMachine($id)
 }
 function CallGetThisMachine($id)
 {
-  require("components\mysql.php");
+  require("components/mysql.php");
   $sql = "SELECT typemachine.designation AS type, marquemachine.designation AS marque, 
           modelemachine.designation AS modele, energiemachine.designation AS energie,
           genremachine.designation AS genre, id_genremachine as idgenre, id_modelemachine as idmodele, id_machine, imat,puissance,date_premservice,date_procvsttech,actif,machine.designation,observation
@@ -73,7 +73,7 @@ function CallGetThisMachine($id)
 }
 function SearchSimpleIMAT($imat)
 {
-  require("components\mysql.php");
+  require("components/mysql.php");
   $sql = "SELECT id_machine FROM machine WHERE imat LIKE ?";
   $stmt = $pdo->prepare($sql);
   $stmt->execute([$imat]);
@@ -83,7 +83,7 @@ function SearchSimpleIMAT($imat)
 }
 function SearchIMAT($imat)
 {
-  require("components\mysql.php");
+  require("components/mysql.php");
   $imat = "%" . $imat . "%";
   $sql = "SELECT typemachine.designation AS type, marquemachine.designation AS marque, 
           modelemachine.designation AS modele, energiemachine.designation AS energie,
@@ -108,7 +108,7 @@ function SearchDES($search = "%")
   for ($i = 1; $i < sizeof($item); $i++) {
     $searchtoo .= "AND LOWER ( CONCAT (machine.designation,typemachine.designation,observation,date_premservice)) LIKE '%" . $item[$i] . "%' ";
   }
-  require("components\mysql.php");
+  require("components/mysql.php");
   $sql = "SELECT typemachine.designation AS type, marquemachine.designation AS marque, 
           modelemachine.designation AS modele, energiemachine.designation AS energie,
           genremachine.designation AS genre, id_genremachine as idgenre, id_modelemachine as idmodele, id_machine,imat,puissance,date_premservice,date_procvsttech,actif,observation
@@ -126,7 +126,7 @@ function SearchDES($search = "%")
 }
 function CallInsertMachine($genre, $nrj, $modele, $type, $marque, $puissancee, $imat, $dateprem, $datetech, $design, $obs, $creator)
 {
-  require("components\mysql.php");
+  require("components/mysql.php");
   $now = date("Y-m-d");
   $sql = "INSERT INTO machine (actif, idx_genre, idx_energie, idx_modele,idx_type,idx_marque,puissance,imat,date_premservice, date_procvsttech,designation,observation,creation_date,creation_creator) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
   $stmt = $pdo->prepare($sql);
@@ -135,7 +135,7 @@ function CallInsertMachine($genre, $nrj, $modele, $type, $marque, $puissancee, $
 }
 function CallUpdateMachine($genre, $nrj, $modele, $type, $marque, $puissancee, $imat, $dateprem, $datetech, $design, $obs, $creator, $id)
 {
-  require("components\mysql.php");
+  require("components/mysql.php");
   $now = date("Y-m-d");
   $sql = "UPDATE machine SET idx_genre= ?, idx_energie = ?, idx_modele = ?,idx_type = ?,idx_marque= ?,puissance = ?,imat =?,date_premservice = ?, date_procvsttech = ?,designation = ?,observation = ?,creation_date = ?,creation_creator = ? WHERE id_machine= ?";
   $stmt = $pdo->prepare($sql);
@@ -144,7 +144,7 @@ function CallUpdateMachine($genre, $nrj, $modele, $type, $marque, $puissancee, $
 }
 function CallOffMachine($idmachine)
 {
-  require("components\mysql.php");
+  require("components/mysql.php");
   $sql = "UPDATE machine SET actif = 0 WHERE id_machine= ?";
   $stmt = $pdo->prepare($sql);
   $stmt->execute([$idmachine]);
@@ -152,7 +152,7 @@ function CallOffMachine($idmachine)
 }
 function CallOnMachine($idmachine)
 {
-  require("components\mysql.php");
+  require("components/mysql.php");
   $sql = "UPDATE machine SET actif = 1 WHERE id_machine= ?";
   $stmt = $pdo->prepare($sql);
   $stmt->execute([$idmachine]);
@@ -160,7 +160,7 @@ function CallOnMachine($idmachine)
 }
 function CallUpdateAlerte($idmachine)
 {
-  require("components\mysql.php");
+  require("components/mysql.php");
 
   $sql = "SELECT COUNT(id_intervention) as nb FROM intervention WHERE idx_machine = ? AND statut_intervention & 7";
   $stmt = $pdo->prepare($sql);

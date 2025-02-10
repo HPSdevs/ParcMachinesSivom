@@ -2,7 +2,7 @@
 
 function CallCheckLogin(string $login)
 {
-    require('components\mysql.php');
+    require('components/mysql.php');
     $sql = 'SELECT * FROM utilisateur WHERE LOWER(login) = LOWER(?)';
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$login]);
@@ -11,7 +11,7 @@ function CallCheckLogin(string $login)
 }
 function CallGetUserEmail(int $iduser)
 {
-    require('components\mysql.php');
+    require('components/mysql.php');
     $sql = 'SELECT courriel FROM utilisateur WHERE id_user= ?';
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$iduser]);
@@ -20,7 +20,7 @@ function CallGetUserEmail(int $iduser)
 }
 function CallGetUserChefMeca()
 {
-    require('components\mysql.php');
+    require('components/mysql.php');
     $sql = 'SELECT courriel FROM utilisateur WHERE grade= 64';
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
@@ -29,7 +29,7 @@ function CallGetUserChefMeca()
 }
 function CallCheckExistLogin(string $login)
 {
-    require('components\mysql.php');
+    require('components/mysql.php');
     $sql = 'SELECT id_user FROM utilisateur WHERE LOWER(login) = LOWER(?)';
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$login]);
@@ -39,7 +39,7 @@ function CallCheckExistLogin(string $login)
 
 function CallCheckExistLoginExceptMe(string $login, int $iduser)
 {
-    require('components\mysql.php');
+    require('components/mysql.php');
     $sql = 'SELECT id_user FROM utilisateur WHERE (LOWER(login) = LOWER(?)) AND (id_user != ?)';
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$login, $iduser]);
@@ -49,7 +49,7 @@ function CallCheckExistLoginExceptMe(string $login, int $iduser)
 
 function CallUpdateLastLog(int $id_user)
 {
-    require('components\mysql.php');
+    require('components/mysql.php');
     $sql = 'UPDATE utilisateur SET date_lastlog = now() WHERE id_user = ?';
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$id_user]);
@@ -58,7 +58,7 @@ function CallUpdateLastLog(int $id_user)
 
 function CallUpdateTheme(int $theme, int $id_user)
 {
-    require('components\mysql.php');
+    require('components/mysql.php');
     $sql = 'UPDATE utilisateur SET theme = ? WHERE id_user = ?';
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$theme, $id_user]);
@@ -66,7 +66,7 @@ function CallUpdateTheme(int $theme, int $id_user)
 }
 function CallGetAllMeca()
 {
-    require("components\mysql.php");
+    require("components/mysql.php");
     $sql = "SELECT * FROM utilisateur WHERE grade = 2";
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
@@ -75,7 +75,7 @@ function CallGetAllMeca()
 }
 function CallGetAllUser()
 {
-    require('components\mysql.php');
+    require('components/mysql.php');
     $sql = "SELECT *, DATE_FORMAT(date_creation, '%d/%m/%Y') as datecrea, DATE_FORMAT(date_lastlog, '%d/%m %H:%i') as datelast FROM utilisateur WHERE id_user>1 ORDER BY login ASC";
     $stmt = $pdo->prepare($sql);
     $stmt->execute();
@@ -85,7 +85,7 @@ function CallGetAllUser()
 
 function CallUpdateUser(int $statut, int $grade, string $login, string $pseudo, string $courriel, int $id_user)
 {
-    require('components\mysql.php');
+    require('components/mysql.php');
     $sql = 'UPDATE utilisateur SET statut = ?, grade = ?, login = ?, pseudo = ?, courriel = ? WHERE id_user = ?';
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$statut, $grade, $login, $pseudo, $courriel, $id_user]);
@@ -94,7 +94,7 @@ function CallUpdateUser(int $statut, int $grade, string $login, string $pseudo, 
 
 function CallUpdatePWDUser(string $password, int $id_user)
 {
-    require('components\mysql.php');
+    require('components/mysql.php');
     $sql = 'UPDATE utilisateur SET password = ? WHERE id_user = ?';
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$password, $id_user]);
@@ -103,7 +103,7 @@ function CallUpdatePWDUser(string $password, int $id_user)
 
 function CallInsertUser(int $statut, int $grade, string $login, string $pseudo, string $password, string $courriel)
 {
-    require('components\mysql.php');
+    require('components/mysql.php');
     $sql = 'INSERT INTO utilisateur (statut,grade,login,pseudo,password,courriel) VALUES (?,?,?,?,?,?)';
     $stmt = $pdo->prepare($sql);
     $stmt->execute([$statut, $grade, $login, $pseudo, $password, $courriel]);
@@ -112,7 +112,7 @@ function CallInsertUser(int $statut, int $grade, string $login, string $pseudo, 
 
 function CallDeleteUser(int $id_user)
 {
-    require('components\mysql.php');
+    require('components/mysql.php');
     $total = 0;
     // verification si possibilité d'effacement du user.
     $sql = "SELECT COUNT(idx_demandeur) as nb FROM intervention WHERE idx_demandeur = ?";

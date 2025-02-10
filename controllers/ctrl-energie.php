@@ -3,7 +3,7 @@
 
 function CallDesignationEnergieMachines($idnrj)
 {
-  require("components\mysql.php");
+  require("components/mysql.php");
   $sql = "SELECT designation FROM energiemachine WHERE id_energiemachine = ?";
   $stmt = $pdo->prepare($sql);
   $stmt->execute([$idnrj]);
@@ -14,7 +14,7 @@ function CallDesignationEnergieMachines($idnrj)
 
 function CallGetEnergieMachines($genre)
 {
-  require("components\mysql.php");
+  require("components/mysql.php");
   $sql = "SELECT * FROM energiemachine WHERE statut = 1 AND genre & ? ORDER BY designation ASC";
   $stmt = $pdo->prepare($sql);
   $stmt->execute([$genre]);
@@ -23,7 +23,7 @@ function CallGetEnergieMachines($genre)
 }
 function CallGetAllEnergieMachines()
 {
-  require("components\mysql.php");
+  require("components/mysql.php");
   $sql = "SELECT * FROM energiemachine ORDER BY designation ASC";
   $stmt = $pdo->prepare($sql);
   $stmt->execute();
@@ -32,7 +32,7 @@ function CallGetAllEnergieMachines()
 }
 function CallUpdateEnergieMachine($designation, $genre, $statut, $id)
 {
-  require("components\mysql.php");
+  require("components/mysql.php");
   $sql = "UPDATE energiemachine SET genre = ?, statut= ?, designation = ? WHERE id_energiemachine = ?";
   $stmt = $pdo->prepare($sql);
   $stmt->execute([$genre, $statut, $designation, $id]);
@@ -40,7 +40,7 @@ function CallUpdateEnergieMachine($designation, $genre, $statut, $id)
 }
 function CallDeleteEnergieMachine($id)
 {
-  require("components\mysql.php");
+  require("components/mysql.php");
   $sql = "SELECT COUNT(idx_energie) as nb FROM machine WHERE idx_energie = ?";
   $stmt = $pdo->prepare($sql);
   $stmt->execute([$id]);
@@ -55,7 +55,7 @@ function CallDeleteEnergieMachine($id)
 }
 function CallInsertEnergieMachine($designation, $genre, $statut)
 {
-  require("components\mysql.php");
+  require("components/mysql.php");
   $sql = "INSERT INTO energiemachine (genre,statut,designation) VALUES (?,?,?)";
   $stmt = $pdo->prepare($sql);
   $stmt->execute([$genre, $statut, $designation]);
