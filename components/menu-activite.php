@@ -1,6 +1,6 @@
 <?php
 include_once( './controllers/ctrl-prestation.php' );
-$color = [ '#303030c0', '#671926c0', '#722f0ec0', '#bca268c0', '#172e69c0', '#007580c0' ];
+$color = [ '#303030c0', '#FEFFD2', '#FFEEA9', '#FFBF78', '#FF7D29', '#A9031E' ];
 $joursdesmois = [ 0, 31, 28, 31, 30, 31, 30, 31, 31, 30, 31, 30, 31 ];
 $desigdesmois = [ '', 'JAN', 'FEV', 'MAR', 'AVR', 'MAI', 'JUN', 'JUI', 'AOU', 'SEP', 'OCT', 'NOV', 'DEC' ];
 echo "<fieldset class='statut'><legend>ACTIVITÉS PRESTATIONS</legend>";

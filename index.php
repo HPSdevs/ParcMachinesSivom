@@ -3,7 +3,7 @@
 // Projet de Stage pour Titre Pro DWWM du 26/08 au 06/11/2024
 $NAMEAPP   = 'ParcMachinesSIVOM';
 $COPYRIGHT = 'HANNOT Philippe';
-$VERSION   = '1.0 (après Stage DWWM)';
+$VERSION   = '1.1 (revision 1)';
 setlocale( LC_TIME, 'fr_FR' );
 ini_set( 'display_errors', 'on' );
 include( 'components/functions.php' );
