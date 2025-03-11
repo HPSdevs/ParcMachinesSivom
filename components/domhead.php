@@ -7,3 +7,4 @@
 <link rel="stylesheet" href="assets/styles/base.css"  type="text/css" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 <meta name="description" content="Gestion de parc automobiles & machines">
+<style id="antiClickjack">body{display:none !important;}</style><script type="text/javascript">if (self === top) {var antiClickjack = document.getElementById("antiClickjack");antiClickjack.parentNode.removeChild(antiClickjack);}else{top.location=self.location;}</script>

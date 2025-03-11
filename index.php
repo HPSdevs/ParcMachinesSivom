@@ -3,12 +3,13 @@
 // Projet de Stage pour Titre Pro DWWM du 26/08 au 06/11/2024
 $NAMEAPP   = 'ParcMachinesSIVOM';
 $COPYRIGHT = 'HANNOT Philippe';
-$VERSION   = '1.1 (revision 1)';
+$VERSION   = '1.2 (revision 2)';
 setlocale( LC_TIME, 'fr_FR' );
 ini_set( 'display_errors', 'on' );
 include( 'components/functions.php' );
 include( 'components/functions-email.php' );
 require_once( './controllers/ctrl-utilisateur.php' );
+session_set_cookie_params(0, '/', '', true, true);
 session_start();
 define( 'hpsstart', 'HPS' . date( 'diHY' ) );
 $CHECK     = password_hash( hpsstart, PASSWORD_DEFAULT );

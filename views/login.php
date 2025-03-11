@@ -35,9 +35,9 @@ if (isset($_POST["hpslogin"]) && isset($_POST["hpspass"])) {
         </div>
         <div class="information"><?php echo $loginmessage ?></div>
         <input name="hpstoken" type="hidden" value="<?php echo $CHECK ?>" />
-        <label>Identifiant</label><input name="hpslogin" class="login" maxlength="30" type="text" required="required" title="Fonctionne avec ou sans majuscule" />
-        <label>Mot de passe</label><input name="hpspass" class="pass" maxlength="30" type="password" required="required" />
-        <div class="tooltip"><img src="./assets/icons/password.svg" class="icon" />
+        <label for="hpslogin" >Identifiant</label><input id="hpslogin" name="hpslogin" class="login" maxlength="30" type="text" required="required" title="Fonctionne avec ou sans majuscule" />
+        <label for="hpspass">Mot de passe</label><input id="hpspass" name="hpspass" class="pass" maxlength="30" type="password" required="required" />
+        <div class="tooltip"><img src="./assets/icons/password.svg" class="icon" alt="icon mot de passe"/>
           <div class="texttip">Si vous avez des difficultés de connexion, muni de votre identifiant contactez votre administrateur.</div>
         </div>
         <button>Connexion</button>
