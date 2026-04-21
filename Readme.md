@@ -4,7 +4,7 @@ Gestionnaire de parc de machines et de véhicules
 
 ![menu](https://github.com/user-attachments/assets/415e611a-68ef-47c1-a6c0-65d2c11c3ddc)
 
-Une application PC GRATUITE de gestion de machines ( machines outils et véhicules tourisme/pro) pour une société comme un SIVOM ( Syndicat Intercommunal à VOcation Multiple ) sur un serveur intranet. Prévu pour écran standard bureautique de taille 1080 \* 1920, vous pouvez suivre votre parc de machines dans les différentes prestations et demandes d'interventions, et à loisirs modifier ou ajouter en marque, en modèle, en intervention ou en prestation pour correspondre aux mieux au votre.
+Une application PC GRATUITE de gestion de machines ( machines outils et véhicules tourisme/pro) pour une société comme un SIVOM ( Syndicat Intercommunal à VOcation Multiple ) sur un serveur intranet (Php & MySQL.) Prévu pour écran standard bureautique de taille 1920 \* 1080, vous pouvez suivre votre parc de machines dans les différentes prestations et demandes d'interventions, et à loisirs modifier ou ajouter en marque, en modèle, en intervention ou en prestation pour correspondre aux mieux au votre.
 
 ### **CONTENU :**
 
